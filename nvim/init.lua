@@ -13,7 +13,8 @@ local packer_bootstrap = ensure()
 
 require("packer").startup(function()
 	use "wbthomason/packer.nvim"
-	use "nvim-treesitter/nvim-treesitter"
+    use "nvim-treesitter/nvim-treesitter"
+    use "windwp/nvim-autopairs"
 end)
 
 vim.g.mapleader		 = " "
@@ -28,3 +29,5 @@ vim.o.expandtab		 = true
 vim.o.hidden		 = true
 vim.o.smartindent	 = true
 vim.o.clipboard      = unnamedplus
+
+require("nvim-autopairs").setup{}
