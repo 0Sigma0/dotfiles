@@ -30,6 +30,7 @@ require("packer").startup(function()
     use "nvim-treesitter/nvim-treesitter"
     use "windwp/nvim-autopairs"
     use "RRethy/nvim-base16"
+    use "preservim/nerdtree"
     use {"nvim-lualine/lualine.nvim", requires = {'kyazdani42/nvim-web-devicons', opt = true}}
 end)
 
