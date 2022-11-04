@@ -11,12 +11,6 @@ end
 
 local packer_bootstrap = ensure()
 
-require("packer").startup(function()
-	use "wbthomason/packer.nvim"
-    use "nvim-treesitter/nvim-treesitter"
-    use "windwp/nvim-autopairs"
-end)
-
 vim.g.mapleader		 = " "
 vim.o.number		 = true
 vim.o.relativenumber = true
@@ -29,5 +23,21 @@ vim.o.expandtab		 = true
 vim.o.hidden		 = true
 vim.o.smartindent	 = true
 vim.o.clipboard      = unnamedplus
+vim.o.doMatchParen   = true 
+
+require("packer").startup(function()
+	use "wbthomason/packer.nvim"
+    use "nvim-treesitter/nvim-treesitter"
+    use "windwp/nvim-autopairs"
+    use "RRethy/nvim-base16"
+    use {"nvim-lualine/lualine.nvim", requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+end)
+
+vim.cmd "color base16-nord"
 
 require("nvim-autopairs").setup{}
+require("lualine").setup{
+    options = {
+        theme = "powerline_dark"
+    }
+}
